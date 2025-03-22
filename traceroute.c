@@ -17,8 +17,11 @@ int main(int argc, char* argv[]){
 
     if(!checkValidIP(argv[1])){
         eprintf("Invalid ip adress\n");
+        return EXIT_FAILURE;
     }
 
+
     
+
 
 }

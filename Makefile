@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -std=c17 -Wall -Wextra
 TARGET = traceroute
-SRC = main.c
+SRC = traceroute.c
 TAR_NAME = antoni_strasz
 
 all: $(TARGET)
