@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -std=c17 -Wall -Wextra
 TARGET = traceroute
-SRC = traceroute.c
+SRC = traceroute.c helpers.c handlers.c
 TAR_NAME = antoni_strasz
 
 all: $(TARGET)
@@ -12,3 +12,6 @@ $(TARGET): $(SRC)
 clean:
 	rm -f $(TARGET)
 
+
+test:
+	sudo ./traceroute 8.8.8.8

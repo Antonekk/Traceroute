@@ -3,6 +3,23 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
+#include <errno.h>
+#include <string.h>
+#include <stdio.h>
+
+#include "helpers.h"
+
+
+
+void iprintf(int i){
+    printf("%d\n", i);
+    return;
+}
+void eprintf(const char* str)
+{
+    fprintf(stderr, "%s: %s\n", str, strerror(errno));
+    exit(EXIT_FAILURE);
+}
 
 
 u_int16_t compute_icmp_checksum(const void *buff, int length)
