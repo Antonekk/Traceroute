@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c17 -Wall -Wextra
+CFLAGS = -std=gnu17 -Wall -Wextra
 TARGET = traceroute
 SRC = traceroute.c helpers.c handlers.c
 TAR_NAME = antoni_strasz
@@ -11,6 +11,7 @@ $(TARGET): $(SRC)
 
 clean:
 	rm -f $(TARGET)
+
 
 
 test:

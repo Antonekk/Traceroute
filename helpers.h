@@ -1,6 +1,9 @@
 #ifndef HELPERS_H
 #define HELPERS_H
 
+#define DEBUG
+
+
 #include <sys/types.h>
 #include <stdbool.h>
 
