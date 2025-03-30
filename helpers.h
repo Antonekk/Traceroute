@@ -1,7 +1,7 @@
 #ifndef HELPERS_H
 #define HELPERS_H
 
-#define DEBUG
+//#define DEBUG
 
 
 #include <sys/types.h>

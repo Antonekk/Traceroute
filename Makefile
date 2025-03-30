@@ -15,4 +15,4 @@ clean:
 
 
 test:
-	sudo ./traceroute 8.8.8.8
+	sudo ./traceroute 156.17.254.113

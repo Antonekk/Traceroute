@@ -33,6 +33,7 @@ int main(int argc, char* argv[]){
 
     // Pid for id in ICPM header
     pid_t pid = getpid();
+    iprintf(pid);
 
     for(int ttl = 1; ttl <= 30; ttl++){
         
