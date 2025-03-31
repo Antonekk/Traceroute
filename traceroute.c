@@ -33,7 +33,6 @@ int main(int argc, char* argv[]){
 
     // Pid for id in ICPM header
     pid_t pid = getpid();
-    iprintf(pid);
 
     for(int ttl = 1; ttl <= 30; ttl++){
         
@@ -43,10 +42,18 @@ int main(int argc, char* argv[]){
         
 
         send_packets(socket_fd,argv[1],pid, ttl);
-        recive_packets(socket_fd, pid, ttl);
+        if(recive_packets(socket_fd, pid, ttl, argv[1])){
+            break;
+        }
 
+        
     }
-    
+
+
+    if(close(socket_fd) < 0)
+        eprintf("close: ");
+
+    exit(EXIT_SUCCESS);
 
 
     
