@@ -1,3 +1,5 @@
+// Antoni Strasz 339096
+
 #include <stdio.h>
 #include <poll.h>
 #include <stdlib.h>

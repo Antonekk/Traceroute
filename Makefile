@@ -1,18 +1,30 @@
 CC = gcc
 CFLAGS = -std=gnu17 -Wall -Wextra
-TARGET = traceroute
-SRC = traceroute.c helpers.c handlers.c
-TAR_NAME = antoni_strasz
+SRC = handlers.c helpers.c traceroute.c
+OBJ = handlers.o helpers.o traceroute.o
+EXEC = traceroute
 
-all: $(TARGET)
+all: $(EXEC)
 
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+$(EXEC): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(EXEC)
+
+handlers.o: handlers.c handlers.h
+	$(CC) $(CFLAGS) -c handlers.c -o handlers.o
+
+helpers.o: helpers.c handlers.h
+	$(CC) $(CFLAGS) -c helpers.c -o helpers.o
+
+traceroute.o: traceroute.c 
+	$(CC) $(CFLAGS) -c traceroute.c -o traceroute.o
+
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(OBJ)
 
+distclean: clean
+	rm -f $(OBJ) $(EXEC)
 
 
 test:
-	sudo ./traceroute 156.17.254.113
+	sudo ./traceroute 8.8.8.8
